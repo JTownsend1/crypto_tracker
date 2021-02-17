@@ -1,35 +1,22 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import './App.css';
+
+import { Browser, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
+import Homepage from './Homepage.js';
+import CoinDetail from './CoinDetail.js';
+
+import React from 'react'
 
 
-
-
-function App() {
-
-  const [coins, setCoins] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
-    .then(res => {
-      setCoins(res.data)
-      console.log(res.data)
-    })
-  })
-
-
+export default function App() {
   return (
-    <div className="App">
-    
-      <h1>CRYPTO TRACKER API</h1>
- 
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' render={() => <Homepage />}/>
+          <Route exact path='/Coin-detail/:coinid' render={() => <CoinDetail />}/>
+
+        </Switch>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
-
-
-
-
-// https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false
