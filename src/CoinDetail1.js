@@ -1,9 +1,15 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { Chart } from 'react-charts'
+// import * as d3 from "d3";
+
+// import {line} from "d3-scale";
 
 
-import Chart from 'chart.js';
+// import { curveLinear } from 'react-charts/dist/react-charts.development';
 
+// import Linkify from 'react-linkify';
+// import { Linking } from 'react-native';
 
 import './CoinDetail.css';
 
@@ -15,8 +21,6 @@ export default function CoinDetail() {
     const [coinDescription, setCoinDescription] = useState("");
 
     const [isLoading, setLoading] = useState(true);
-
-    const [myChart, setChart] = useState();
 
     
     
@@ -31,12 +35,11 @@ export default function CoinDetail() {
             )
             .then(res => {
               
-                
-                // for (let i = 0; i < res.data.prices.length; i++) {
-                //     timeArray.push(res.data.prices[i][0]);
-                //   }
-
+                setCoinInfo(res.data);
                 setCoinArray(res.data.prices);
+
+                console.log(coinArray);
+                // dateObject.toLocaleString()
 
                 setLoading(false);
                 
@@ -75,28 +78,54 @@ export default function CoinDetail() {
                         .catch(error => console.log(error));                
                     }, []);
 
+                        // coinDescription.replace("/<.+?>","NNNNN");
+                        coinDescription.replace('is','MMMMMMMMMMMMM');
+                    console.log(coinDescription);
+                    // console.log(yes);
 
-                    const data = React.useMemo(
-                        () => [
-                          {
-                            label: 'Series 1',
-                            // data: [[1,2], [2,7], [3,12], [4,3]]
-                          data: coinArray
-                          
-                          }
-                        ],
-                       
-                      )
-                     
-                    const axes = React.useMemo(
-                        () => [
-                          { primary: true, type: 'linear', position: 'bottom' },
-                          { type: 'linear', position: 'left' }
-                        ],
-                        []
-                      )
+  
 
+    const data = React.useMemo(
+        () => [
+          {
+            label: 'Series 1',
+            // data: [[1,2], [2,7], [3,12], [4,3]]
+          data: coinArray,
+          color: 'rgb(13, 118, 128)',
+          showPoints: false
+          
+          }
+        ],
+       
+      )
 
+      // <text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 10px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(45deg);">February</text>
+     
+    const axes = React.useMemo(
+        () => [
+          { primary: true, type: 'time', position: 'bottom', showGrid: false, showTicks: true},
+          
+          { type: 'linear', position: 'left', showGrid: true, maxLabelRotation: 50 }
+        ],
+        []
+      )
+
+    //   <g class="tick" style="transform: translate3d(0px, 0px, 0px);"><g class="labelGroup"><line class="tickline" x1="0" x2="0" y1="0" y2="6" style="stroke-width: 1; fill: transparent; opacity: 1; stroke: rgba(0, 0, 0, 0.1);"></line><text class="tickLabel" dominant-baseline="hanging" text-anchor="middle" style="font-family: sans-serif; font-size: 20px; opacity: 1; fill: black; transform: translate3d(0px, 20px, 0px) rotate(30deg);">August</text></g></g>
+
+    //   const line = d3.line();
+    // const line = d3.line(d => d.date, d => d.value)
+    // .curve(d3.curveCatmullRom.alpha(0.5));
+
+    const series = React.useMemo(
+        () => (
+          { showPoints: false }
+       
+
+        ),
+        []
+        )
+
+    
 
       if (isLoading) {
         return <div className="App">Loading...</div>;
@@ -112,10 +141,9 @@ export default function CoinDetail() {
 
             
             <div className='graph'>
-            <Chart axes={axes} series={series} data={data} />
-            
+                <Chart axes={axes} series={series} data={data} />
             </div>
-            
+            {}
             <div className='info'>
                 {coinDescription}
             </div>

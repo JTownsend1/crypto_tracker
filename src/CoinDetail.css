@@ -1,0 +1,64 @@
+.container {
+  display: block;
+}
+
+.graph {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    width: 550px;
+    height: 450px;
+}
+
+
+.info {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding-top: 35px;
+    text-align: justify;
+    line-height: 1.6;
+  /* text-justify: inter-word; */
+
+} 
+
+.heading {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 40%;
+    padding: 30px;
+    /* background-color: rgb(75, 72, 72); */
+    
+}
+
+.h1 {
+    font: rgb(13, 118, 128);
+}
+
+/* #element.style  */
+.tick {
+    stroke-width: 20;
+    fill: rgb(255, 255, 255);
+    opacity: 1;
+    rx: 0px;
+    ry: 0px;
+    background-color: burlywood;
+    color: chartreuse;
+}
+
+.ticklabel {
+    color: red;
+    font-size: 30px;
+}
+
+.Axis {
+
+}
+
+.tickline {
+    stroke:rgb(133, 10, 10)
+}

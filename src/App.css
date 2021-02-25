@@ -1,13 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap'); */
+
+@import url("https://fonts.googleapis.com/css2?family=Reggae+One&display=swap");
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap");
+
+
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   /* font-family: 'Montserrat', sans-serif; */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: #bfbfff;
-  color: rgb(255, 217, 217);
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: 'Crimson Text', serif;
+  background-color: #FFF1E0;
+  /* background-color: linear-gradient(
+    -225deg,
+    #ac32e4 0%,
+    #7918f2 48%,
+    #4801ff 100%
+  ); */
+
+
+
+  color: rgb(75, 72, 72);
 }
 
 .coin-app {
@@ -37,14 +56,34 @@
   height: 50px;
   border-radius: 4px;
   border: none;
-  background-image: linear-gradient(
+  
+  /* background-image: linear-gradient(
     -225deg,
     #ac32e4 0%,
     #7918f2 48%,
     #4801ff 100%
+  ); */
+  /* background-image: linear-gradient(
+    -225deg,
+    #ff0000 0%,
+    #dfcfcf 48%,
+    #3ff108 100%
+  ); */
+  background-image: linear-gradient(
+    -225deg,
+    /* #bc2df5 0%,
+    #fcfcfc 48%,
+    #38f8ff 100% */
+
+    rgb(2, 36, 39),
+    rgb(13, 118, 128),
+    rgb(226, 226, 226)
+
   );
 
+
   color: #e2e2e2;
+  font-size: 20px;
 }
 
 .coin-input::placeholder {

@@ -1,7 +1,7 @@
 
 import { Browser, Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import Homepage from './Homepage.js';
-import CoinDetail from './CoinDetail.js';
+import CoinDetail from './CoinDetail1.js';
 
 import React from 'react'
 
