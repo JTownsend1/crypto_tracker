@@ -90,7 +90,13 @@ export default function CoinDetail() {
           {
             label: 'Series 1',
             // data: [[1,2], [2,7], [3,12], [4,3]]
+            // data: [["XXxxxx",3],["ddddddd",4],["edede",5],["XXxxxx",3],["ddddddd",4],["edede",5],["XXxxxx",3],["ddddddd",4],["edede",5],["XXxxxx",3],["ddddddd",4],["edede",5]],
           data: coinArray,
+          // data: [
+          // { primary: "xxxxxxxx", secondary: 10 },
+          // { primary: "jjjjjjjjjj", secondary: 12 },
+          // { primary: "lklklkklklklklk", secondary: 15 },
+          // ],
           color: 'rgb(13, 118, 128)',
           showPoints: false
           
@@ -103,9 +109,9 @@ export default function CoinDetail() {
      
     const axes = React.useMemo(
         () => [
-          { primary: true, type: 'time', position: 'bottom', showGrid: false, showTicks: true},
+          { primary: true, type: 'time', position: 'bottom', showGrid: false},
           
-          { type: 'linear', position: 'left', showGrid: true, maxLabelRotation: 50 }
+          { primary: false, type: 'linear', position: 'left', showGrid: true}
         ],
         []
       )
@@ -134,14 +140,26 @@ export default function CoinDetail() {
       return (
 
         <div className='container'>
+         
 
             <div className="heading">
                 <h1>{coinInfo.name}</h1>
             </div>
 
-            
-            <div className='graph'>
-                <Chart axes={axes} series={series} data={data} />
+            <div classname='graph_container'>
+            {/* <div classname='y_label'>
+                  <p>Price in USD</p>
+                </div> */}
+                
+                <div className='graph'>
+                    <Chart axes={axes} series={series} data={data} />
+                </div>
+                {/* <div classname='y_label'>
+                  <p>Price in USD</p>
+                </div> */}
+              {/* <div classname='y_label'>
+                Time
+              </div> */}
             </div>
             {}
             <div className='info'>

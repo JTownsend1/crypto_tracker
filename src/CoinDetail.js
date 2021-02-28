@@ -31,10 +31,6 @@ export default function CoinDetail() {
             )
             .then(res => {
               
-                
-                // for (let i = 0; i < res.data.prices.length; i++) {
-                //     timeArray.push(res.data.prices[i][0]);
-                //   }
 
                 setCoinArray(res.data.prices);
 
@@ -90,7 +86,7 @@ export default function CoinDetail() {
                      
                     const axes = React.useMemo(
                         () => [
-                          { primary: true, type: 'linear', position: 'bottom' },
+                          { primary: true, type: 'linear', position: 'bottom'},
                           { type: 'linear', position: 'left' }
                         ],
                         []
@@ -110,16 +106,15 @@ export default function CoinDetail() {
                 <h1>{coinInfo.name}</h1>
             </div>
 
-            
             <div className='graph'>
+
             <Chart axes={axes} series={series} data={data} />
-            
             </div>
+            
             
             <div className='info'>
                 {coinDescription}
             </div>
-
          </div>
       )
     }
