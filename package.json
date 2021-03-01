@@ -15,9 +15,9 @@
     "react-linkify": "^1.0.0-alpha",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4",
-    "homepage": "http://JTownsend1.github.io/crypto_tracker"
+    "web-vitals": "^0.2.4"
   },
+  "homepage": "http://JTownsend1.github.io/crypto_tracker",
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
