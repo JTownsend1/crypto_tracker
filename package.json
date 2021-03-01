@@ -15,14 +15,10 @@
     "react-linkify": "^1.0.0-alpha",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "homepage": "http://JTownsend1.github.io/crypto_tracker"
   },
-  "homepage": "http://JTownsend1.github.io/crypto_tracker",
   "scripts": {
-    // "start": "react-scripts start",
-    // "build": "react-scripts build",
-    // "test": "react-scripts test",
-    // "eject": "react-scripts eject"
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
