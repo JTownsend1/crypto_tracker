@@ -9,10 +9,11 @@ import React from 'react'
 export default function App() {
   return (
     <div>
+      Hello world
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' render={() => <Homepage />}/>
-          <Route exact path='/Coin-detail/:coinid' render={() => <CoinDetail />}/>
+          <Route exact path='/crypto_tracker' render={() => <Homepage />}/>
+          <Route exact path='/crypto_tracker/Coin-detail/:coinid' render={() => <CoinDetail />}/>
         </Switch>
       </BrowserRouter>
     </div>

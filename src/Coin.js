@@ -14,7 +14,7 @@ const Coin = ({
   priceChange
 }) => {
   return (
-    <Link to={`/Coin-detail/${id}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/crypto_tracker/Coin-detail/${id}`} style={{ textDecoration: 'none' }}>
   
     <div className='coin-container'>
       <div className='coin-row'>
