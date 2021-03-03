@@ -13,7 +13,6 @@ export default function App() {
         <Switch>
           <Route exact path='/' render={() => <Homepage />}/>
           <Route exact path='/Coin-detail/:coinid' render={() => <CoinDetail />}/>
-
         </Switch>
       </BrowserRouter>
     </div>
